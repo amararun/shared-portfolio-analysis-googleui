@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/fx_logo.png" />
+  <title>REX: Portfolio Analysis Suite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'light-blue': {
+              '50': '#f0f9ff',
+              '100': '#e0f2fe',
+              '200': '#bae6fd',
+              '300': '#7dd3fc',
+              '400': '#38bdf8',
+              '500': '#0ea5e9',
+              '600': '#0284c7',
+              '700': '#0369a1',
+              '800': '#075985',
+              '900': '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.1.0",
+        "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+        "react/": "https://esm.sh/react@^19.1.0/"
+      }
+    }
+  </script>
+  <style>
+    .tab-active {
+      background: linear-gradient(to right, #3b82f6, #2563eb);
+      color: white;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+    .tab-inactive {
+      background: transparent;
+      color: #1e40af;
+    }
+  </style>
+</head>
+<body class="bg-light-blue-50">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  
+  <!-- Statcounter Code -->
+  <script type="text/javascript">
+    var sc_project = 13047808;
+    var sc_invisible = 1;
+    var sc_security = "b480b311";
+  </script>
+  <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript>
+    <div class="statcounter">
+      <a title="web stats" href="https://statcounter.com/" target="_blank">
+        <img class="statcounter" src="https://c.statcounter.com/13047808/0/b480b311/1/" alt="web stats" referrerPolicy="no-referrer-when-downgrade" />
+      </a>
+    </div>
+  </noscript>
+  <!-- End of Statcounter Code -->
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+
+{
+  "name": "Financial Analysis Suite",
+  "description": "A web application offering powerful financial tools: Portfolio Performance Analyzer (QuantStats), Technical Analysis reports, YFinance Stock Data (Company Profile, Financials), and YFinance Historical Price Data. Switch between tools using a tabbed interface.",
+  "requestFramePermissions": []
+}
