@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/fx_logo.png" />
+  <title>REX: Portfolio Analysis Suite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            indigo: {
+              950: '#1e1b4b',
+              900: '#312e81',
+              800: '#3730a3',
+              700: '#4338ca',
+              600: '#4f46e5',
+              500: '#6366f1',
+              400: '#818cf8',
+              300: '#a5b4fc',
+              200: '#c7d2fe',
+              100: '#e0e7ff',
+              50: '#eef2ff',
+            },
+            'light-blue': {
+              '50': '#f0f9ff',
+              '100': '#e0f2fe',
+              '200': '#bae6fd',
+              '300': '#7dd3fc',
+              '400': '#38bdf8',
+              '500': '#0ea5e9',
+              '600': '#0284c7',
+              '700': '#0369a1',
+              '800': '#075985',
+              '900': '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.1.0",
+        "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+        "react/": "https://esm.sh/react@^19.1.0/"
+      }
+    }
+  </script>
+  <style>
+    /* Professional Header Gradient */
+    .header-gradient {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    }
+    
+    .tab-active {
+      background: linear-gradient(to right, #4f46e5, #4338ca);
+      color: white;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+    .tab-inactive {
+      background: transparent;
+      color: #4338ca;
+      border: 1px solid transparent;
+    }
+    .tab-inactive:hover {
+      background: rgba(79, 70, 229, 0.05);
+      border-color: rgba(79, 70, 229, 0.1);
+    }
+    
+    /* Force tab responsive behavior */
+    .tab-container-mobile {
+      display: block !important;
+    }
+    
+    .tab-container-desktop {
+      display: none !important;
+    }
+    
+    @media (min-width: 640px) {
+      .tab-container-mobile {
+        display: none !important;
+      }
+      
+      .tab-container-desktop {
+        display: flex !important;
+      }
+    }
+    
+    /* Force header responsive behavior */
+    .header-container {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+    }
+    
+    .header-title {
+      margin-bottom: 0.5rem !important;
+    }
+    
+    @media (min-width: 768px) {
+      .header-container {
+        flex-direction: row !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        height: 3rem !important;
+      }
+      
+      .header-title {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    /* Enhanced Form Styling - Force black text everywhere */
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    select {
+      transition: all 0.2s ease-in-out;
+      color: #000000 !important; /* Force black text in inputs */
+      font-weight: 400 !important; /* Ensure normal weight for sharp text */
+    }
+    
+    /* Force only form labels to be jet black but sharp */
+    form label {
+      color: #000000 !important; /* Force jet black labels only in forms */
+      font-weight: 400 !important; /* Normal weight for sharp appearance */
+    }
+    
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    input[type="date"]:focus,
+    select:focus {
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+      color: #000000 !important; /* Keep black text on focus */
+      font-weight: 400 !important; /* Keep normal weight on focus */
+    }
+    
+    /* Compact Tab Headers */
+    .tab-compact {
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+    }
+    
+    /* Button Enhancements */
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+      transition: all 0.2s ease-in-out;
+    }
+    
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+    
+    /* Loading Animation */
+    .spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #e5e7eb;
+      border-top: 2px solid #4f46e5;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-left: 8px;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .loading {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    
+    /* Card Enhancements */
+    .card {
+      transition: all 0.2s ease-in-out;
+    }
+    
+    .card:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-slate-50">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  
+  <!-- Statcounter Code -->
+  <script type="text/javascript">
+    var sc_project = 13047808;
+    var sc_invisible = 1;
+    var sc_security = "b480b311";
+  </script>
+  <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript>
+    <div class="statcounter">
+      <a title="web stats" href="https://statcounter.com/" target="_blank">
+        <img class="statcounter" src="https://c.statcounter.com/13047808/0/b480b311/1/" alt="web stats" referrerPolicy="no-referrer-when-downgrade" />
+      </a>
+    </div>
+  </noscript>
+  <!-- End of Statcounter Code -->
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
