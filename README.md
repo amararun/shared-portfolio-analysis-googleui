@@ -51,3 +51,9 @@ The application can be easily deployed to platforms like Vercel or Netlify.
 - TypeScript
 - Tailwind CSS
 - Built with Google AI Studio
+
+## Author
+
+Built by [Amar Harolikar](https://www.linkedin.com/in/amarharolikar/)
+
+Explore 30+ open source AI tools for analytics, databases & automation at [tigzig.com](https://tigzig.com)
