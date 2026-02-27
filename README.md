@@ -1,3 +1,6 @@
+> [\!NOTE]
+> This repository is a working example of the concept described below. It may not yet include all recommended security hardening measures. My newer repositories now have robust security at both frontend and backend layers — rate limiting, SQL validation, concurrency controls, error sanitization, and more. You can use this repo to understand the core concept, but please apply security best practices before deploying to production. See my [80+ item Security Checklist](https://tigzig.com/security) and [live hardened examples](https://tigzig.com/security-examples) for reference.
+
 # Portfolio Analysis Suite UI
 A modern React-based web interface for comprehensive portfolio analysis, built primarily using Google AI Studio Build. This repository contains the frontend UI code that integrates with multiple FastAPI-MCP backend servers.
 
