@@ -60,3 +60,7 @@ The application can be easily deployed to platforms like Vercel or Netlify.
 Built by [Amar Harolikar](https://www.linkedin.com/in/amarharolikar/)
 
 Explore 30+ open source AI tools for analytics, databases & automation at [tigzig.com](https://tigzig.com)
+
+## Security
+
+Basic security checks are built into this code. This repository is a point-in-time, open-source snapshot; for the most current security guidelines and hardening practices, see the continuously-updated checklist at https://www.tigzig.com/security
