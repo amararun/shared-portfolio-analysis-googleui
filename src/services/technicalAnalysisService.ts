@@ -1,6 +1,6 @@
 import { TechnicalAnalysisServiceParams, TechnicalAnalysisResponse, ApiErrorResponse } from '../types';
 
-const API_BASE_URL = 'https://ta.hosting.tigzig.com';
+const API_BASE_URL = 'https://ta.tigzig.com';
 const API_PATH = '/api/technical-analysis';
 
 export const fetchTechnicalAnalysisReport = async (params: TechnicalAnalysisServiceParams): Promise<TechnicalAnalysisResponse> => {

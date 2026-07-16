@@ -1,7 +1,7 @@
 
 import { YFinanceDataType, YFinanceApiResponse, ApiErrorResponse, YFinanceHistoricalPricesData } from '../types';
 
-const API_BASE_URL = 'https://yfin.hosting.tigzig.com';
+const API_BASE_URL = 'https://yfin-h.tigzig.com';
 
 const getEndpointForDataType = (dataType: YFinanceDataType): string => {
   switch (dataType) {

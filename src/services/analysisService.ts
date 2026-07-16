@@ -1,7 +1,7 @@
 
 import { AnalysisServiceParams, AnalysisResponse, ApiErrorResponse } from '../types';
 
-const API_BASE_URL = 'https://quantstats.hosting.tigzig.com'; // Correct API host
+const API_BASE_URL = 'https://quantstats-h.tigzig.com'; // Correct API host
 const API_PATH = '/analyze'; // API path
 
 export const fetchAnalysisReport = async (params: AnalysisServiceParams): Promise<AnalysisResponse> => {
