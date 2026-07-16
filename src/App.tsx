@@ -76,7 +76,7 @@ const DocsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen,
               <p className="text-gray-600 text-sm mb-2">
                 Detailed documentation on methodology, calculations, reconciliations carried out and reasons for variances, if any
               </p>
-              <a href="https://ffn.hosting.tigzig.com/static/docs/SPR_QS_METHODOLOGY.html" 
+              <a href="https://ffn.tigzig.com/static/docs/SPR_QS_METHODOLOGY.html" 
                  target="_blank" 
                  rel="noopener noreferrer"
                  className="text-blue-600 hover:text-blue-800 hover:underline text-sm">

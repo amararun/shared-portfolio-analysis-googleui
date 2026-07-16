@@ -1,6 +1,6 @@
 import { FFNServiceParams, FFNResponse } from '../types';
 
-const API_BASE_URL = 'https://ffn.hosting.tigzig.com';
+const API_BASE_URL = 'https://ffn.tigzig.com';
 
 export const fetchFFNReport = async (params: FFNServiceParams): Promise<FFNResponse> => {
   const requestPayload = {

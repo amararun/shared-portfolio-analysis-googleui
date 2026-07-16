@@ -156,7 +156,7 @@ export const FFNStatsAnalyzer: React.FC<FFNStatsAnalyzerProps> = ({
           <a href="https://github.com/pmorissette/ffn" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 hover:underline font-medium">official documentation for FFN</a> and{' '}
           <a href="https://github.com/Lumiwealth/quantstats_lumi" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 hover:underline font-medium">QuantStats documentation</a>{' '}
           for full methodology details. For a methodology comparison between QuantStats and Security Performance Review implementations, users are advised to refer to this{' '}
-          <a href="https://ffn.hosting.tigzig.com/static/docs/SPR_QS_METHODOLOGY.html" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 hover:underline font-medium">methodology reference document</a>. 
+          <a href="https://ffn.tigzig.com/static/docs/SPR_QS_METHODOLOGY.html" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 hover:underline font-medium">methodology reference document</a>. 
           Always validate outputs and interpret results in light of your specific analytical objectives.
         </div>
       </div>
