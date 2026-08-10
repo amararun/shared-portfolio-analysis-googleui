@@ -1,4 +1,4 @@
-**This repo is archived and no longer maintained.** It stays up as reference code for the build guides. No updates, including security updates, so review before you use any of it anywhere serious. The live apps run on newer, hardened versions of this code.
+⚠️ **This repo is archived and no longer maintained.** It stays up as reference code for the build guides. No updates, including security updates, so review before you use any of it anywhere serious. The live apps run on newer, hardened versions of this code.
 
 # Portfolio Analysis Suite UI
 A modern React-based web interface for comprehensive portfolio analysis, built primarily using Google AI Studio Build. This repository contains the frontend UI code that integrates with multiple FastAPI-MCP backend servers.
